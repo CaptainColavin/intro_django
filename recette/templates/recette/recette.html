@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>{{ recette }}</title>
+      <script type="text/javascript" src="http://www.joielire.net/artifice.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Le {{ recette.nom }} de {{ recette.user }}</h1>
+    <ul>
+      <li>Temps de préparation: {{recette.duree}} minutes </li>
+      <li>Vous pourrez servir: {{recette.nb_parts}} personnes </li>
+      <li>
+        Pour cette recette, vous aurez besoin des ingrédients suivants:
+        {% for ingredient in ingredientsrecette %}
+          <ul>
+            <li>{{ ingredient.ingredient }} {{ingredient.quantite}} {{ingredient.unite}}</li>
+          </ul>
+        {% endfor %}
+      </li>
+    </ul>
+
+  </body>
+</html>

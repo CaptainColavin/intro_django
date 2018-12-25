@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Mamieton</title>
+</head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Mamieton, les bonnes recettes de grand-mère</h1>
+      {% if user.is_authenticated is not True %}
+        <a href="{% url 'account_signup' %}"> Connectez vous</a>
+      {% endif %}
+
+      <a href="{% url 'recettes' %}"> Accedez aux bonnes recette de mamie</a>
+
+    </div>
+  </body>
+</html>
+
+
+
+
+<style>
+body {
+  background-image: url('https://visualperceptionblog.files.wordpress.com/2017/05/foodporn.png');
+  background-repeat: no-repeat;
+  /* Full height */
+  height: 100%;
+  background-size: cover;
+}
+
+.container{
+  background-color: rgba(255,255,255,0.5);
+  height: 100%;
+}
+
+
+</style>
